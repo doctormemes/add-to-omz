@@ -1,14 +1,14 @@
 # add-to-omz OhMyZsh plugin
 
-This plugin adds a command/function that can be used to easily and simply install OhMyZsh plugins and themes from GitHub by simply specifying the HTTPS (or SSH) repo URL and whether you are adding a theme, or a plugin.
+This plugin adds a command/function that can be used to easily and simply install OhMyZsh plugins and themes from GitHub by simply specifying whether you are adding a theme or plugin and the repo's git URL.
 
 **Syntax**
 
-`add-to-omz <git-repo-url> <type>`
+`add-to-omz <type> <git-repo-url>`
 
 **Example**
 
-`add-to-omz https://github.com/doctormemes/add-to-omz.git plugin`
+`add-to-omz plugin https://github.com/doctormemes/add-to-omz.git`
 
 **Be sure to add the plugin to your plugins in .zshrc**
 
