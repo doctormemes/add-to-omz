@@ -9,7 +9,6 @@ add-to-omz() {
         local git_repo=$2
         local name=$(echo "${git_repo##*/}" | cut -f 1 -d '.')
         if [[ ${plugin_theme} = "themes" || ${plugin_theme} = "plugins" ]] && [[ ${git_repo} = *".git" ]]; then
-            [ -d $ZSH/custom/$plugin_theme/$name ] && (cd $ZSH/custom/$plugin_theme/$name && git pull) || git clone --depth=1 $git_repo $ZSH/custom/$plugin_theme/$name
             if [ -d $ZSH/custom/$plugin_theme/$name ]
             then
                 printf "Specified plugin or theme appears to be installed already\n"
