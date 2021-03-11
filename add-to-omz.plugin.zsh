@@ -5,15 +5,15 @@
 add-to-omz() {
     if [ $# -eq 2 ]
     then
-        local plugin_theme=${1}s
+        local type="${1}s"
         local git_repo=$2
-        local name=$(echo "${git_repo##*/}" | cut -f 1 -d '.')
-        if [[ ${plugin_theme} = "themes" || ${plugin_theme} = "plugins" ]] && [[ ${git_repo} = *".git" ]]; then
-            if [ -d $ZSH/custom/$plugin_theme/$name ]
+        local name=$(echo "${git_repo:t}" | cut -f 1 -d '.')
+        if [[ ${type} = "themes" || ${type} = "plugins" ]] && [[ ${git_repo} = *".git" ]]; then
+            if [ -d $ZSH/custom/$type/$name ]
             then
                 printf "Specified plugin or theme appears to be installed already\n"
             else
-                git clone --depth=1 $git_repo $ZSH/custom/$plugin_theme/$name
+                git clone --depth=1 $git_repo $ZSH/custom/$type/$name
             fi
         else
             printf "\t%b%s\n\v" "\e[1;31m===INVALID USAGE===\e[0m"
