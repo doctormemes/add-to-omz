@@ -16,18 +16,14 @@ add-to-omz() {
                 git clone --depth=1 $git_repo $ZSH/custom/$type/$name
             fi
         else
-            printf "\t%b%s\n\v" "\e[1;31m===INVALID USAGE===\e[0m"
-            printf "%b\n  %s  %s\n\v" "\e[1;39mUSAGE\e[0m" "add-to-omz <type> <git-repo-url>"
-            printf "%b\n  %s\t%s\n  %s\t%s  %s\n" "\e[1;39mTYPES\e[0m" "plugin:" "Specify this type for plugins" "theme:" "Specify this type for themes"
+            printf "\t%b%s\n\v" "\e[1;31mINVALID USAGE\e[0m"
+            printf "%s\v\n%b\n  %s\n\v%b\n  %s\t%s\n  %s\t%s  %s\n" "Add a plugin or theme to OhMyZsh" "\e[1;39mUSAGE\e[0m" "add-to-omz <type> <git-repo-url>" "\e[1;39mTYPES\e[0m" "plugin:" "Specify this type for plugins" "theme:" "Specify this type for themes"
         fi
     elif [ $# -eq 0 ]
     then
-        printf "%s\v\n" "Add a plugin or theme to OhMyZsh"
-        printf "%b\n  %s  %s\n\v" "\e[1;39mUSAGE\e[0m" "add-to-omz <type> <git-repo-url>"
-        printf "%b\n  %s\t%s\n  %s\t%s  %s\n" "\e[1;39mTYPES\e[0m" "plugin:" "Specify this type for plugins" "theme:" "Specify this type for themes"
+        printf "%s\v\n%b\n  %s\n\v%b\n  %s\t%s\n  %s\t%s  %s\n" "Add a plugin or theme to OhMyZsh" "\e[1;39mUSAGE\e[0m" "add-to-omz <type> <git-repo-url>" "\e[1;39mTYPES\e[0m" "plugin:" "Specify this type for plugins" "theme:" "Specify this type for themes"
     else
-        printf "\t%b%s\n\v" "\e[1;31m===INVALID USAGE===\e[0m"
-        printf "%b\n  %s  %s\n\v" "\e[1;39mUSAGE\e[0m" "add-to-omz <type> <git-repo-url>"
-        printf "%b\n  %s\t%s\n  %s\t%s  %s\n" "\e[1;39mTYPES\e[0m" "plugin:" "Specify this type for plugins" "theme:" "Specify this type for themes"
+        printf "\t%b%s\n\v" "\e[1;31mINVALID ARGUMENTS\e[0m"
+        printf "%s\v\n%b\n  %s\n\v%b\n  %s\t%s\n  %s\t%s  %s\n" "Add a plugin or theme to OhMyZsh" "\e[1;39mUSAGE\e[0m" "add-to-omz <type> <git-repo-url>" "\e[1;39mTYPES\e[0m" "plugin:" "Specify this type for plugins" "theme:" "Specify this type for themes"
     fi
 }
