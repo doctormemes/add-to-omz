@@ -8,7 +8,7 @@ add-to-omz() {
         local type="${1}s"
         local git_repo=$2
         local name=$(echo "${git_repo:t}" | cut -f 1 -d '.')
-        if [[ ${type} = "themes" || ${type} = "plugins" ]] && [[ ${git_repo} = *".git" ]]; then
+        if [[ ${type} = "themes" || ${type} = "plugins" ]] && [[ ${git_repo} = "https://github.com/"* ]]; then
             if [ -d $ZSH/custom/$type/$name ]
             then
                 printf "Specified plugin or theme appears to be installed already\n"
